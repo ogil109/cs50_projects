@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+    <h1>Portfolio</h1>
+
+    <table class="table table-bordered table-striped">
+        <thead class="thead-light">
+            <tr>
+                <th>Symbol</th>
+                <th>Name</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>Total Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for stock in stocks %}
+                <tr>
+                    <td>{{ stock.symbol }}</td>
+                    <td>{{ stock.name }}</td>
+                    <td>{{ stock.total_shares }}</td>
+                    <td>{{ stock.price|usd }}</td>
+                    <td>{{ (stock.price * stock.total_shares)|usd }}</td>
+                </tr>
+            {% endfor %}
+            <tr>
+                <td colspan="4" align="right">Cash</td>
+                <td>{{ cash|usd }}</td>
+            </tr>
+            <tr>
+                <td colspan="4" align="right">Total Value</td>
+                <td>{{ total_value|usd }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Custom addon to add cash to balance -->
+    <h2>Cash top-up</h2>
+    <form action="/" method="POST">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="topup" name="topup" placeholder="Cash" type="number">
+        </div>
+        <button class="btn btn-primary" type="submit">Top up</button>
+    </form>
+{% endblock %}
