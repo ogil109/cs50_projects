@@ -14,7 +14,7 @@ WHERE year = 2021 AND month = 7 AND day = 28;
 
 -- Interviews 161, 162 and 163 found useful.
     -- 161 says the thief got into a car sometime within 10min after the theft. Look security footage of bakery parking lot between 10:15 and 10:25am.
-    -- 162 says the thief withdrawed money from the ATM at Leggett Street earlier that morning.
+    -- 162 says the thief withdrew money from the ATM at Leggett Street earlier that morning.
     -- 163 says the thief called someone on the phone during less that 1 minute in the parking lot. He told the other person to purchase the earliest flight out of town at the next morning.
 
 -- Researching ATM withdrawals that day:
